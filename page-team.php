@@ -19,8 +19,8 @@ if (have_posts()) : while (have_posts()) : the_post();
 			$args_team = array (
 				'post_type' 		=> 'team',
 				'post_status' 		=> 'publish', 
-				'orderby' 			=> 'menu_order',
-				'order' 			=> 'ASC',
+				'orderby' 			=> 'rand',
+                'posts_per_page'	=> -1,
 			);
 			$query_team = new WP_Query( $args_team );
 				if ($query_team->have_posts()) :

@@ -301,6 +301,7 @@ h6 {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    margin-left:5px;
 }
 .zoek-header  {
     padding-top:22px;
@@ -436,7 +437,7 @@ img.headerlogo {
 	margin-left: 15px;
 }
 .navbar-brand {
-	width: 100px;
+	width: 160px;
 }
 
 
@@ -763,6 +764,7 @@ ul.second-menu li a:hover, ul.second-menu li.current-menu-item a {
 #visie1 .card-header {
     background-color: transparent;
     border-bottom: none;
+    cursor: pointer;
 }
 #visie1 .card-header h4 {
     font-size:1.3rem;
@@ -772,6 +774,7 @@ ul.second-menu li a:hover, ul.second-menu li.current-menu-item a {
 }
 #visie1 .btn-link {
     color: $primaire_kleur;
+    cursor: pointer;
 }
 #visie1 .btn-link:hover {
     text-decoration: none;
@@ -1256,7 +1259,7 @@ input.search-field {
 	}
 	.topinfo {
 		width: 75%;
-		padding-top: 30px;
+		padding-top: 22px;
 	}
 	.menu:before {
         content: "meer";

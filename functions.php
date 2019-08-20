@@ -5,13 +5,13 @@ require_once('sections/class-tgm-plugin-activation.php');
 	CSS EN JS INLADEN THEMA
 ====================================*/
 function theme_styles() {
-    wp_enqueue_script( 'jquery' );
-	
-	/* STIJL */
-    wp_enqueue_style( 'boots-4-min-style', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
-    wp_enqueue_style( 'animate-css-style', 'https://cdn.jsdelivr.net/npm/animate.css@3.7.0/animate.min.css');
-    wp_enqueue_style( 'owlslider-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
-    wp_enqueue_style( 'owlslider-style-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+  wp_enqueue_script( 'jquery' );
+
+/* STIJL */
+  wp_enqueue_style( 'boots-4-min-style', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
+  wp_enqueue_style( 'animate-css-style', 'https://cdn.jsdelivr.net/npm/animate.css@3.7.0/animate.min.css');
+  wp_enqueue_style( 'owlslider-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
+  wp_enqueue_style( 'owlslider-style-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
 	wp_enqueue_style( 'fontawesome-5-style', 'https://pro.fontawesome.com/releases/v5.4.1/css/all.css');
 	wp_enqueue_style( 'fancybox-css', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css');
 	wp_enqueue_style( 'opmaak-style', get_template_directory_uri() . '/assets/css/opmaak.css?v=1.2.0');
@@ -19,7 +19,7 @@ function theme_styles() {
 	/* SCRIPTS */
 	wp_enqueue_script( 'boots-4-script', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', '', '3.0.0' , true );
 	wp_enqueue_script( 'wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js', array('jquery'), '1.1.2' );
-    wp_enqueue_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', '', '1.12.1' , true);
+  wp_enqueue_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', '', '1.12.1' , true);
 	wp_enqueue_script( 'owlslider-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', '', '2.3.4' , true );
 	wp_enqueue_script( 'fancybox-script', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js', '', '3.5.6' , true );
 	wp_enqueue_script( 'eigen-script', get_template_directory_uri() . '/assets/js/scripts.js', '', '3.0.0' , true );
@@ -182,14 +182,76 @@ $plugins = array(
             'required'           => false,
             'external_url'       => 'https://nl.wordpress.org/plugins/wordfence/',
         ),
-	    array(
+				array(
+            'name'               => 'Intuitive Custom Post Order',
+            'slug'               => 'intuitive-custom-post-order', 
+            'source'             => 'https://downloads.wordpress.org/plugin/intuitive-custom-post-order.3.1.2.zip',
+            'required'           => true,
+            'external_url'       => 'https://nl.wordpress.org/plugins/intuitive-custom-post-order/',
+        ),
+	    	array(
             'name'               => 'Yoast SEO',
             'slug'               => 'wordpress-seo', 
             'source'             => 'https://downloads.wordpress.org/plugin/wordpress-seo.5.0.2.zip',
             'required'           => false,
             'external_url'       => 'https://downloads.wordpress.org/plugin/wordpress-seo.5.0.2.zip',
         ),
-
+				array(
+            'name'               => 'Contact Form 7',
+            'slug'               => 'contact-form-7', 
+            'source'             => 'https://downloads.wordpress.org/plugin/contact-form-7.5.1.4.zip',
+            'required'           => false,
+            'external_url'       => 'https://nl.wordpress.org/plugins/contact-form-7/',
+        ),
+					array(
+            'name'               => 'GitHub Updater',
+            'slug'               => 'github-updater', 
+            'source'             => 'https://github.com/afragen/github-updater/archive/develop.zip',
+            'required'           => false,
+            'external_url'       => 'https://github.com/afragen/github-updater',
+        ),
+					array(
+            'name'               => 'Klassieke editor',
+            'slug'               => 'classic-editor', 
+            'source'             => 'https://downloads.wordpress.org/plugin/classic-editor.1.5.zip',
+            'required'           => true,
+            'external_url'       => 'https://nl.wordpress.org/plugins/classic-editor/',
+        ),
+					array(
+            'name'               => 'ManageWP - Worker',
+            'slug'               => 'worker', 
+            'source'             => 'https://downloads.wordpress.org/plugin/worker.zip',
+            'required'           => false,
+            'external_url'       => 'https://nl.wordpress.org/plugins/worker/',
+        ),
+					array(
+            'name'               => 'TinyMCE Advanced',
+            'slug'               => 'tinymce-advanced', 
+            'source'             => 'https://downloads.wordpress.org/plugin/tinymce-advanced.5.2.1.zip',
+            'required'           => true,
+            'external_url'       => 'https://nl.wordpress.org/plugins/tinymce-advanced/',
+        ),
+					array(
+            'name'               => 'WP Super Cache',
+            'slug'               => 'wp-super-cache', 
+            'source'             => 'https://downloads.wordpress.org/plugin/wp-super-cache.1.7.0.zip',
+            'required'           => false,
+            'external_url'       => 'https://nl.wordpress.org/plugins/wp-super-cache/',
+        ),
+					array(
+            'name'               => 'WP-SCSS',
+            'slug'               => 'wp-scss', 
+            'source'             => 'https://downloads.wordpress.org/plugin/wp-scss.1.2.4.zip',
+            'required'           => true,
+            'external_url'       => 'https://nl.wordpress.org/plugins/wp-scss/',
+        ),
+					array(
+            'name'               => 'Relevanssi',
+            'slug'               => 'relevanssi', 
+            'source'             => 'https://downloads.wordpress.org/plugin/relevanssi.4.3.1.1.zip',
+            'required'           => true,
+            'external_url'       => 'https://nl.wordpress.org/plugins/relevanssi/',
+        ),
     );
 
     $config = array(

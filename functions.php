@@ -8,21 +8,21 @@ function theme_styles() {
   wp_enqueue_script( 'jquery' );
 
 /* STIJL */
-  wp_enqueue_style( 'boots-4-min-style', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
-  wp_enqueue_style( 'animate-css-style', 'https://cdn.jsdelivr.net/npm/animate.css@3.7.0/animate.min.css');
-  wp_enqueue_style( 'owlslider-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
-  wp_enqueue_style( 'owlslider-style-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
-	wp_enqueue_style( 'fontawesome-5-style', 'https://pro.fontawesome.com/releases/v5.4.1/css/all.css');
-	wp_enqueue_style( 'fancybox-css', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css');
-	wp_enqueue_style( 'opmaak-style', get_template_directory_uri() . '/assets/css/opmaak.css?v=1.2.0');
-      
-	/* SCRIPTS */
-	wp_enqueue_script( 'boots-4-script', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', '', '3.0.0' , true );
-	wp_enqueue_script( 'wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js', array('jquery'), '1.1.2' );
-  wp_enqueue_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', '', '1.12.1' , true);
-	wp_enqueue_script( 'owlslider-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', '', '2.3.4' , true );
-	wp_enqueue_script( 'fancybox-script', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js', '', '3.5.6' , true );
-	wp_enqueue_script( 'eigen-script', get_template_directory_uri() . '/assets/js/scripts.js', '', '3.0.0' , true );
+    wp_enqueue_style( 'boots-4-min-style', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
+    wp_enqueue_style( 'animate-css-style', 'https://cdn.jsdelivr.net/npm/animate.css@3.7.0/animate.min.css');
+    wp_enqueue_style( 'owlslider-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
+    wp_enqueue_style( 'owlslider-style-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+    wp_enqueue_style( 'fancybox-css', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css');
+    wp_enqueue_style( 'opmaak-style', get_template_directory_uri() . '/assets/css/opmaak.css?v=1.2.0');
+
+    /* SCRIPTS */
+    wp_enqueue_script( 'boots-4-script', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', '', '3.0.0' , true );
+    wp_enqueue_script( 'wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js', array('jquery'), '1.1.2' );
+    wp_enqueue_script( 'fontawesome-kit', 'https://kit.fontawesome.com/aead5e8119.js', array('jquery'), '5.11.2' );
+    wp_enqueue_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', '', '1.12.1' , true);
+    wp_enqueue_script( 'owlslider-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', '', '2.3.4' , true );
+    wp_enqueue_script( 'fancybox-script', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js', '', '3.5.6' , true );
+    wp_enqueue_script( 'eigen-script', get_template_directory_uri() . '/assets/js/scripts.js', '', '3.0.0' , true );
 	
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -268,7 +268,7 @@ $plugins = array(
         'menu_title'                      => __( 'Installeer plugins', 'tgmpa' ),
         'installing'                      => __( 'Plugin installeren: %s', 'tgmpa' ), // %s = plugin name.
         'oops'                            => __( 'Er ging iets mis met de plugin API.', 'tgmpa' ),
-        'notice_can_install_required'     => _n_noop( 'Dit thema is de volgende plugins nodig: %1$s.', 'Dit thema is de volgende plugins nodig: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).
+        'notice_can_install_required'     => _n_noop( 'Dit thema heeft de volgende plugins nodig: %1$s.', 'Dit thema is de volgende plugins nodig: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).
         'notice_can_install_recommended'  => _n_noop( 'De volgende plugins zijn optineel: %1$s.', 'De volgende plugins zijn optineel: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).
         'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'tgmpa' ), // %1$s = plugin name(s).
         'notice_can_activate_required'    => _n_noop( 'De volgende belangijke plugin staat uit: %1$s.', 'De volgende belangijke plugin staat uit: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).

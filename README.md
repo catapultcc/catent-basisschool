@@ -1,3 +1,11 @@
+1.0.8 Bugfix
+- FontAwesome KIT toegevoegd
+- Linkedin icon toegevoegd
+- Header social icons op mobiel verwijderen en toevoegen in footer
+- logo mobiel max 140px
+- footer aangepaste breekpunten toegepast
+- kleine stijlcorrecties
+
 1.0.7 Bugfix
 - Functions.php aangepast en uitgebreid met alle noodzakelijke plug-ins
 - Extra plugin toegevoegd tbv volgorde CPT

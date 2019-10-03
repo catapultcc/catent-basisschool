@@ -8,21 +8,35 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<?php $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'large' );?>
+<?php if ( get_field('headerafbeelding_rechts') ):
+    $hoofdAfbeelding = get_field('headerafbeelding_rechts');
+    $size = 'full';
+    $afbeeldingID = $hoofdAfbeelding['ID'];
+    $afbeeldingAlt = $hoofdAfbeelding['alt'];
+    $afbeeldingArray = wp_get_attachment_image_src($afbeeldingID, $size);
+    $afbeeldingUrl = $afbeeldingArray[0];
+endif; ?>
 
-
-<section id="home-intro">
+<section id="home-intro" style="overflow: hidden">
 	<div class="container ">
-		<div class="row pt-2 pt-md-5">
-<?php if( get_field('youtube_video') == ''): ?>
-            <div class="col-12 p-0">
-                <img class="d-lg-none" src="<?php echo $image_attributes[0]; ?>" alt="<?php the_title(); ?>" width="100%">
+		<div class="row row-eq-height">
+            <?php if( get_field('youtube_video') == ''): ?>
+            <div class="col-12 d-lg-none p-0">
+                <img class="d-lg-none" src="<?php echo $afbeeldingUrl; ?>" alt="<?php echo $afbeeldingAlt; ?>" width="100%">
             </div>
-            <style>@media (min-width: 992px) { 
-                #home-intro {background-image: url('<?php echo $image_attributes[0]; ?>'); } }
+            <style>
+            @media (min-width: 992px) { 
+                #home-intro-rechts {
+                    background-image: url('<?php echo $afbeeldingUrl; ?>'); 
+                    background-size: cover;
+                } 
+                #home-intro-tekst {
+                    height: 50vh
+                }
+            }
             </style>
-<?php endif; ?>
-			<div id="home-intro-tekst" class="col-12 col-lg-6 d-flex pb-3 align-items-center">
+            <?php endif; ?>
+			<div id="home-intro-tekst" class="col-12 col-lg-6 d-flex pb-3 align-items-center pt-2 pt-md-5">
 				<div class="d-inline-block">
                     <h3 class="mb-2 mt-5 mt-lg-0"><?php echo get_field('subtitel_pagina');?></h3>
                     <h1 class="mb-4"><?php the_title(); ?></h1>
@@ -37,15 +51,18 @@
 					</div>
                 </div>
 			</div>
-            <div class="col-12 col-lg-6 " >
-                <div class="d-inline rem30 tekst-secondair">
-<?php if( get_field('youtube_video') ): ?>
-                    <div class="mt-3 mt-lg-5" style="position:relative;padding-top:56.6%;">
-                        <iframe  src="https://www.youtube.com/embed/<?php echo get_field('youtube_video');?>?controls=0&autoplay=1&fs=0&loop=1&rel=0&showinfo=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:99%;height:99%;border:2px solid #fff" ></iframe>
-                    </div>
-<?php endif; ?>
+            <?php if( get_field('youtube_video') ): ?>
+            <div class="col-12 col-lg-6" >
+                <div style="position:relative;padding-top:56.6%; margin-top: 10vh;">
+                    <iframe  src="https://www.youtube.com/embed/<?php echo get_field('youtube_video');?>?controls=0&autoplay=1&fs=0&loop=1&rel=0&showinfo=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:99%;height:99%;border:2px solid #fff" ></iframe>
                 </div>
             </div>
+            <?php else : ?>
+            <div class="col-12 col-lg-6" style="overflow-x: visible;">
+                <div id="home-intro-rechts" class="rem30 tekst-secondair d-none d-md-block">
+                </div>
+            </div>
+            <?php endif; ?>
 		</div>
 	</div>
 </section>
@@ -64,11 +81,10 @@
                                 ">
                         <h3 class="<?php if($blokTeller == 1) : echo "tekst-wit"; endif; ?>"><?php the_sub_field('blok_titel'); ?></h3>
                         <?php
-                        //if($blokTeller <= 3) : 
                             echo '<div class="icoon-hoek';
                             if($blokTeller == 1) : echo ' tekst-wit '; endif;
                             echo '">'.get_sub_field('blok_icoon').'</div>'; 
-                        //endif; ?>
+                        ?>
                         <div class="arrow-hoek <?php if($blokTeller == 1) : echo "tekst-wit"; endif; ?>">
                             <i class="fal fa-long-arrow-right"></i>
                         </div>

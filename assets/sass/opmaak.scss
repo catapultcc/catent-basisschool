@@ -293,15 +293,13 @@ h6 {
 }
 .social-icons-header a {
 	font-size: 0.60rem;
-	display: inline-block;
-	margin-left: 10px;
 }
 .social-icons-header button {
     font-size: 0.6rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin-left:5px;
+    padding: 0;
 }
 .zoek-header  {
     padding-top:22px;
@@ -433,11 +431,11 @@ nav.navbar {
     opacity: 0.9;
 }
 img.headerlogo {
-	width: 125px;
+	width: 120px;
 	margin-left: 15px;
 }
 .navbar-brand {
-	width: 140px;
+	width: 125px;
 }
 
 
@@ -510,10 +508,10 @@ img.headerlogo {
     background-position: top;
 }
 .topinfo {
-	width: 50%;
+	width: 35%;
     text-align: right;
     height: 0;
-    padding-top: 20px;
+    padding-top: 25px;
 }
 .scrolldown p, .scrolldown i {
 	color: #fff;
@@ -1219,13 +1217,24 @@ input.search-field {
 	#mc_embed_signup form {
 		width: 411px!important;
 	}
+    .topinfo {
+        width: 45%;
+    }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     #home-intro {
-        margin-top:143px;
+        margin-top: 140px;
         background-position: top right;
         background-size:50%; 
+    }
+    #home-intro-rechts {
+        background-size: cover; 
+        height: 50vh; 
+        position: relative; 
+        z-index: 9; 
+        width: 50vw; 
+        background-position: center;
     }
     .intro-buttons {
         display:none;
@@ -1299,7 +1308,7 @@ input.search-field {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 	.home-intro-tekst-inner {
-		min-height: 115px;
+		min-height: 200px;
 	}
 	.extra-p-r {
 		padding-right: 60px;

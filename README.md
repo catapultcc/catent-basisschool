@@ -1,3 +1,7 @@
+1.0.9 Bugfix
+- Iconen in header aangepast qua stijl
+- home-intro opnieuw opgebouwd ivm Youtube en foto rechts 
+
 1.0.8 Bugfix
 - FontAwesome KIT toegevoegd
 - Linkedin icon toegevoegd

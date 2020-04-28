@@ -244,7 +244,7 @@ if ( get_field('slider_beelden') ):
 
 						<div class="item p-0">
 
-							<img class="" src="<?php echo $afbeelding_url; ?>" alt="Stel je vraag aan" width="100%">
+							<img class="" src="<?php echo $afbeelding_url; ?>" alt="<?php echo get_bloginfo();?> - <?php the_title();?>" width="100%">
 
 						</div>
 

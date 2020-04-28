@@ -13,7 +13,7 @@ function theme_styles() {
     wp_enqueue_style( 'owlslider-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
     wp_enqueue_style( 'owlslider-style-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
     wp_enqueue_style( 'fancybox-css', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css');
-    wp_enqueue_style( 'opmaak-style', get_template_directory_uri() . '/assets/css/opmaak.css?v=1.2.0');
+    wp_enqueue_style( 'opmaak-style', get_template_directory_uri() . '/assets/css/opmaak.css?v=1.2.1');
 
     /* SCRIPTS */
     wp_enqueue_script( 'boots-4-script', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', '', '3.0.0' , true );
@@ -22,7 +22,7 @@ function theme_styles() {
     wp_enqueue_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', '', '1.12.1' , true);
     wp_enqueue_script( 'owlslider-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', '', '2.3.4' , true );
     wp_enqueue_script( 'fancybox-script', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js', '', '3.5.6' , true );
-    wp_enqueue_script( 'eigen-script', get_template_directory_uri() . '/assets/js/scripts.js', '', '3.0.0' , true );
+    wp_enqueue_script( 'eigen-script', get_template_directory_uri() . '/assets/js/scripts.js', '', '3.0.1' , true );
 	
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
@@ -218,11 +218,11 @@ $plugins = array(
             'external_url'       => 'https://nl.wordpress.org/plugins/classic-editor/',
         ),
 					array(
-            'name'               => 'ManageWP - Worker',
+            'name'               => 'WP Mail SMTP by WPForms',
             'slug'               => 'worker', 
-            'source'             => 'https://downloads.wordpress.org/plugin/worker.zip',
+            'source'             => 'https://downloads.wordpress.org/plugin/wp-mail-smtp.1.8.1.zip',
             'required'           => false,
-            'external_url'       => 'https://nl.wordpress.org/plugins/worker/',
+            'external_url'       => 'https://downloads.wordpress.org/plugin/wp-mail-smtp',
         ),
 					array(
             'name'               => 'TinyMCE Advanced',
@@ -251,6 +251,13 @@ $plugins = array(
             'source'             => 'https://downloads.wordpress.org/plugin/relevanssi.4.3.1.1.zip',
             'required'           => true,
             'external_url'       => 'https://nl.wordpress.org/plugins/relevanssi/',
+        ),
+    				array(
+            'name'               => 'WP Mail SMTP by WPForms',
+            'slug'               => 'wp-mail-smtp', 
+            'source'             => 'https://downloads.wordpress.org/plugin/wp-mail-smtp.2.0.0.zip',
+            'required'           => true,
+            'external_url'       => 'https://nl.wordpress.org/plugins/wp-mail-smtp/',
         ),
     );
 

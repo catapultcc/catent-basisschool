@@ -1,3 +1,10 @@
+1.1.0 Bugfix
+- Standaard toevoegen van de plugin: WP Mail SMTP by WPForms.
+- background-position: top toevoegen aan dit om de foto op de homepage bovenaan vast te zetten
+- Homepage template > Wat ouders zeggen, weg als er geen quotes zijn ingevoerd.
+- Sliderbeelden in vervolg template
+- Teampagina the_content(); toegevoegd.
+
 1.0.9 Bugfix
 - Iconen in header aangepast qua stijl
 - home-intro opnieuw opgebouwd ivm Youtube en foto rechts 

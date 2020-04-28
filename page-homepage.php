@@ -112,10 +112,12 @@ endif; ?>
 <section id="wat-zeggen" class="pt-2 pb-3 vlak-lichtgrijs">
 	<div class="container">
 		<div class="row pt-5 pb-5">
+			<?php if( have_rows('slider') ): ?>
 			<div class="col-12 center">
 				<h3>Wat zeggen</h3>
 				<h2>onze ouders en leerlingen</h2>
 			</div>
+            <?php endif; ?>
 		</div>
 	</div>
 	<?php
@@ -134,7 +136,7 @@ endif; ?>
                     $tel = 0;
 					if( have_rows('slider') ):
 						while ( have_rows('slider') ) : the_row(); $tel++;
-                            if($tel < 5) :
+                            if($tel < 6) :
                                 if ( get_sub_field('slide_foto')) :
                                     $hoofdAfbeelding = get_sub_field('slide_foto');
                                     $size = 'medium';

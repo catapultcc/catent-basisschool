@@ -39,25 +39,25 @@ if (have_posts()) : while (have_posts()) : the_post();
 							<div class="pr-2 pl-2 mb-5">
 								<div class="row">
 									<div class="col-12 afbeelding-team pb-3">
-                    <a data-fancybox="team2" data-src="#team-<?php echo $team_teller; ?>" href="javascript:;" class="team-klik2" >
-                        <img src="<?php echo $afbeelding_urlTeam; ?>" class="hoef team-img mt-3" alt="<?php echo $afbeelding_altTeam; ?>" width="100%"></a>
+                                        <a data-fancybox="team2" data-src="#team-<?php echo $team_teller; ?>" href="javascript:;" class="team-klik2" >
+                                        <img src="<?php echo $afbeelding_urlTeam; ?>" class="hoef team-img mt-3" alt="<?php echo $afbeelding_altTeam; ?>" width="100%"></a>
 									</div>
 									<div class="col-7 col-sm-6 col-xl-7">
-										<h3 class="rem12 mt-2"><?php echo get_field('teamlid_voornaam'); ?></h3>
+										<h3 class="rem12 mt-2"><?php echo ucfirst(get_field('teamlid_voornaam')); ?></h3>
 									</div>
 									<div class="col-5 col-sm-6 col-xl-5 right">
-										<a data-fancybox="team" data-src="#team-<?php echo $team_teller; ?>" href="javascript:;" class="team-klik button button-secondair over">Over</a>
+										<a data-fancybox="team" data-src="#team-<?php echo $team_teller; ?>" href="javascript:void(0);" class="team-klik button button-secondair over">Over</a>
 									</div>
-                  <div class="col-12 rem10"><?php echo get_field('teamlid_functie'); ?></div>
+                                  <div class="col-12 rem10"><?php echo ucfirst(get_field('teamlid_functie')); ?></div>
 								</div>
 								
 								<div class="fancybox-team" style="display: none;" id="team-<?php echo $team_teller; ?>">
 									<img src="<?php echo $afbeelding_urlTeam; ?>" class="mt-3" alt="<?php echo $afbeelding_altTeam; ?>" width="200">
 								  	<div class="row team-info px-1 px-md-4 pb-5">
 										<div class="col-12">
-                        <button data-fancybox-close="" class="fancybox-close-small sluit" title="Close"><i class="fas fa-times"></i></button>
+                                            <button data-fancybox-close="" class="fancybox-close-small sluit" title="Close"><i class="fas fa-times"></i></button>
 											<h5><?php the_title(); ?></h5>
-								  			<p><?php echo get_the_content(); ?></p>
+								  			<p><?php the_content(); ?></p>
 										</div>
 									</div>
 								</div>
@@ -68,6 +68,14 @@ if (have_posts()) : while (have_posts()) : the_post();
 					endwhile; 
 				endif;
 			wp_reset_postdata(); ?>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<?php $the_content = apply_filters('the_content', get_the_content());
+				if ( !empty($the_content) ) {
+					echo $the_content;
+				} ?>
+			</div>
 		</div>
 	</div>
 </section>

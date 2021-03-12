@@ -1,3 +1,6 @@
+1.1.2 Bugfix
+- Header
+
 1.1.1 Bugfix en uitbreiding
 - Nieuwe template voor kinderopvang
 - Formaat fotoslider aangepast

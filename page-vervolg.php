@@ -33,9 +33,11 @@ if (have_posts()) : while (have_posts()) : the_post();
 </section>
 <?php endif; ?>
 
-<?php if ( get_field('slider_beelden') ): ?>
-<section id="visieslider" class="">
-	<div class="container-fluid mb-5 " >
+<?php
+if ( get_field('slider_beelden') ):
+?>
+<section id="visieslider">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12 p-0">
 				<div class="owl-carousel owl-theme " id="visie-slider">
@@ -44,13 +46,13 @@ if (have_posts()) : while (have_posts()) : the_post();
                         while ( have_rows('slider_beelden') ) : the_row();
                             if ( get_sub_field('slide_foto') ): $t=0; $t++;
                                 $slideAfbeelding = get_sub_field('slide_foto');
-                                $size = 'medium';
+                                $size = 'large';
                                 $afbeeldingID = $slideAfbeelding['ID'];
                                 $afbeelding_array = wp_get_attachment_image_src($afbeeldingID, $size);
                                 $afbeelding_url = $afbeelding_array[0];
                             endif; ?>
 						<div class="item p-0">
-							<img class="" src="<?php echo $afbeelding_url; ?>" alt="Visie Catent " width="100%">
+							<img class="" src="<?php echo $afbeelding_url; ?>" alt="<?php echo get_bloginfo();?> - <?php the_title();?>" width="100%">
 						</div>
 						<?php
 						endwhile;

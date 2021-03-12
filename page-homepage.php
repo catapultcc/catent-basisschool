@@ -72,13 +72,12 @@ endif; ?>
 		<div class="row pt-5 pb-2">
 			<?php
 			if( have_rows('blokken') ): $blokTeller = 0;
-				while ( have_rows('blokken') ) : the_row(); $blokTeller++; ?>
-            <div class="col-12 col-md-<?php if($blokTeller <= 3){echo'4';}else{echo'6';}?> col-lg-4 mb-4 vierkant-wrapper">
-                <a href="<?php the_sub_field('blok_link'); ?>" onclick="gtag('event', 'Klik', { event_category:  'Homepage', event_action: '<?php echo strip_tags(get_sub_field('blok_titel')); ?>'});"> 
-                    <div class="blok-inner 
-                                <?php if($blokTeller == 1) : echo "vlak-primair"; endif; ?>
-                                <?php if($blokTeller <= 3) : echo "blok-inner-uitgelicht vierkant-box"; endif; ?>
-                                ">
+				while ( have_rows('blokken') ) : the_row(); $blokTeller++;
+                if( get_sub_field('blok_link_extern') ): $blokLink = get_sub_field('blok_link_extern'); $linkTarget = "blank"; else : $blokLink = get_sub_field('blok_link'); endif;
+            ?>
+            <div class="col-12 col-md-<?php if($blokTeller <= 3){echo'4';} else{echo'6';}?> col-lg-4 mb-4 vierkant-wrapper">
+                <a href="<?php echo $blokLink; ?>" <?php if ($linkTarget == "blank") : echo 'target="_blank"'; endif; ?> onclick="gtag('event', 'Klik', { event_category:  'Homepage', event_action: '<?php echo strip_tags(get_sub_field('blok_titel')); ?>'});"> 
+                    <div class="blok-inner <?php if($blokTeller == 1) : echo "vlak-primair "; endif; if($blokTeller <= 3) : echo "blok-inner-uitgelicht vierkant-box"; endif; ?>">
                         <h3 class="<?php if($blokTeller == 1) : echo "tekst-wit"; endif; ?>"><?php the_sub_field('blok_titel'); ?></h3>
                         <?php
                             echo '<div class="icoon-hoek';
@@ -115,7 +114,7 @@ endif; ?>
 			<?php if( have_rows('slider') ): ?>
 			<div class="col-12 center">
 				<h3>Wat zeggen</h3>
-				<h2>onze ouders en leerlingen</h2>
+				<h2><?php if( get_field('titel_boven_quoteslider') ): the_field('titel_boven_quoteslider'); else : echo "onze ouders en leerlingen"; endif; ?></h2>
 			</div>
             <?php endif; ?>
 		</div>

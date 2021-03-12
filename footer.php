@@ -4,6 +4,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-6 pr-md-4 mb-5 ">
+                        <?php // kijken of je op een kinderopvang pagina zit en anders de normale footer weergeven
+                        if ( is_page_template( 'page-kinderopvang.php' ) ) { ?>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="tekst-zwart mt-3 mb-3">Kinderopvang Catent</h5>
+                            </div>
+                            <div class="col-12 mb-3"> Kinderopvang Catent biedt en organiseert opvang voor kinderen voor (VSO) en na school (BSO), alsook gedurende de dag. Vanaf 0 jaar zijn kinderen welkom. De opvang is verbonden aan de scholen van Catent, in hetzelfde gebouw als de school. Daarmee zorgen we voor een ononderbroken ontwikkeling van uw kind. </div>
+                            <div class="col-6 col-md-4"> <a href="https://www.catent.nl" target="_blank" onclick="gtag('event', 'Klik', { event_category:  'Footer', event_action: 'Catent'});"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/catent-kinderopvang_logo_payoff.svg" alt="Stichting Catent Logo" width="90%"></a> </div>
+                        </div>
+                        <?php } else { ?>
                         <div class="row">
                             <div class="col-12">
                                 <h5 class="tekst-zwart mt-3 mb-3"><?php echo get_field('footer_kop', 'option'); ?></h5>
@@ -12,6 +22,7 @@
                             <div class="col-6 col-md-4"> <a href="https://www.catent.nl" target="_blank" onclick="gtag('event', 'Klik', { event_category:  'Footer', event_action: 'Catent'});"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/catent_logo_payoff.svg" alt="Stichting Catent Logo" width="90%"></a> </div>
                             <div class="col-6 col-md-8 social-icons"> <a class="m-0" href="https://www.linkedin.com/company/catent" target="_blank" onclick="gtag('event', 'Klik', { event_category:  'Footer', event_action: 'Linkedin'});"> <span class="fa-stack fa-2x"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i> </span> </a> </div>
                         </div>
+                        <?php } ?>
                     </div>
                     <div class="col-12  col-md-6 col-lg-3  mb-5 mb-md-0">
                         <h5 class="tekst-zwart mt-3 mb-3">Contact</h5>

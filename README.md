@@ -1,3 +1,9 @@
+1.1.1 Bugfix en uitbreiding
+- Nieuwe template voor kinderopvang
+- Formaat fotoslider aangepast
+- Blokken homepage link aanpasbaar
+- Footer aangepast
+
 1.1.0 Bugfix
 - Standaard toevoegen van de plugin: WP Mail SMTP by WPForms.
 - background-position: top toevoegen aan dit om de foto op de homepage bovenaan vast te zetten

@@ -73,7 +73,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
                     <a href="<?php echo get_field('social_media_linkedin', 'option'); ?>" target="_blank" class="d-none d-lg-inline-block"  onclick="gtag('event', 'Klik', { event_category:  'Header', event_action: 'Linkedin'});"> <span class="fa-stack fa-2x tekst-secondair" style="margin-top:-8px"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i> </span> </a>
                     <?php endif; ?>
                     <!-- ICON TWITTER -->
-                    <a href="tel:<?php echo get_field('social_media_twitter', 'option'); ?>" target="_blank" class="d-none d-lg-inline-block" onclick="gtag('event', 'Klik', { event_category:  'Header', event_action: 'Twitter'});"> <span class="fa-stack fa-2x tekst-secondair" style="margin-top:-8px"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fab fa-twitter fa-stack-1x fa-inverse"></i> </span> </a>
+                    <?php if(get_field('social_media_twitter', 'option')) : ?>
+                    <a href="<?php echo get_field('social_media_twitter', 'option'); ?>" target="_blank" class="d-none d-lg-inline-block" onclick="gtag('event', 'Klik', { event_category:  'Header', event_action: 'Twitter'});"> <span class="fa-stack fa-2x tekst-secondair" style="margin-top:-8px"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fab fa-twitter fa-stack-1x fa-inverse"></i> </span> </a>
+                    <?php endif; ?>
                     <!-- ICON TELEFOON -->
                     <a href="tel:<?php echo get_field('telefoonnummer', 'option'); ?>" target="_blank" class="d-inline-block d-lg-none" onclick="gtag('event', 'Klik', { event_category:  'Header', event_action: 'Telefoon'});"> <span class="fa-stack fa-2x tekst-secondair" style="margin-top:-8px"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fas fa-phone fa-stack-1x fa-inverse"></i> </span> </a>
                     <!-- ICON SEARCH -->

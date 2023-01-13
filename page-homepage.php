@@ -31,7 +31,7 @@ endif; ?>
                     background-size: cover;
                 } 
                 #home-intro-tekst {
-                    height: 50vh
+                    height: auto;
                 }
             }
             </style>
@@ -69,24 +69,32 @@ endif; ?>
 
 <section id="blokken" class="pt-3 pb-2 vlak-lichtgrijs">
 	<div class="container">
-		<div class="row pt-5 pb-2">
+		<?php if( get_field('blokken_layout') == 'layout2' ) { ?> 
+			<div class="row pt-5 pb-2">
 			<?php
 			if( have_rows('blokken') ): $blokTeller = 0;
 				while ( have_rows('blokken') ) : the_row(); $blokTeller++;
                 if( get_sub_field('blok_link_extern') ): $blokLink = get_sub_field('blok_link_extern'); $linkTarget = "blank"; else : $blokLink = get_sub_field('blok_link'); endif;
             ?>
-            <div class="col-12 col-md-<?php if($blokTeller <= 3){echo'4';} else{echo'6';}?> col-lg-4 mb-4 vierkant-wrapper">
+            <div class="col-12 col-md-6 col-lg-4 mb-4 vierkant-wrapper">
                 <a href="<?php echo $blokLink; ?>" <?php if ($linkTarget == "blank") : echo 'target="_blank"'; endif; ?> onclick="gtag('event', 'Klik', { event_category:  'Homepage', event_action: '<?php echo strip_tags(get_sub_field('blok_titel')); ?>'});"> 
-                    <div class="blok-inner <?php if($blokTeller == 1) : echo "vlak-primair "; endif; if($blokTeller <= 3) : echo "blok-inner-uitgelicht vierkant-box"; endif; ?>">
-                        <h3 class="<?php if($blokTeller == 1) : echo "tekst-wit"; endif; ?>"><?php the_sub_field('blok_titel'); ?></h3>
-                        <?php
-                            echo '<div class="icoon-hoek';
-                            if($blokTeller == 1) : echo ' tekst-wit '; endif;
-                            echo '">'.get_sub_field('blok_icoon').'</div>'; 
-                        ?>
-                        <div class="arrow-hoek <?php if($blokTeller == 1) : echo "tekst-wit"; endif; ?>">
+                    <div class="blok-inner blok-inner-uitgelicht p-md-4 <?php if( !get_sub_field('blok_samenvatting') ): echo "vierkant-box"; endif; ?>" style="height: auto;">
+                        <?php if( get_sub_field('blok_afbeelding') ): ?>
+                            <img src="<?php the_sub_field('blok_afbeelding'); ?>" class="mb-3" alt="<?php bloginfo('name'); ?>" width="100%">
+                        <?php endif; ?>
+                        <h3 class="<?php if($blokTeller == 1) : echo "tekst-wit"; endif; ?> mb-2"><?php the_sub_field('blok_titel'); ?></h3>
+                        <?php if( get_sub_field('blok_samenvatting') ): ?>
+                            <p style="color: #333;"><?php the_sub_field('blok_samenvatting'); ?></p>
+                        <?php endif; ?>
+                        <?php if( get_sub_field('blok_samenvatting') ): ?> 
+                        <div class="arrow-hoek">
                             <i class="fal fa-long-arrow-right"></i>
                         </div>
+                        <?php else : ?>
+                        <div class="arrow-hoek">
+                            <i class="fal fa-long-arrow-right"></i>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </a>
             </div>
@@ -94,7 +102,40 @@ endif; ?>
 				endwhile;
 			endif;
 			?>
+		</div>
+		<?php 
+		} else { ?>
+		<div class="row pt-5 pb-2">
+			<?php
+			if( have_rows('blokken') ): $blokTeller = 0;
+				while ( have_rows('blokken') ) : the_row(); $blokTeller++;
+                if( get_sub_field('blok_link_extern') ): $blokLink = get_sub_field('blok_link_extern'); $linkTarget = "blank"; else : $blokLink = get_sub_field('blok_link'); endif;
+            ?>
             <div class="col-12 col-md-6 col-lg-4 mb-4 vierkant-wrapper">
+                <a href="<?php echo $blokLink; ?>" <?php if ($linkTarget == "blank") : echo 'target="_blank"'; endif; ?> onclick="gtag('event', 'Klik', { event_category:  'Homepage', event_action: '<?php echo strip_tags(get_sub_field('blok_titel')); ?>'});"> 
+                    <div class="blok-inner blok-inner-uitgelicht p-md-4" style="height: auto;">
+                    <?php /*?><div class="blok-inner blok-inner-uitgelicht p-md-4 vierkant-box" style="height: auto;"><?php */?>
+                        <h3 class="mb-2"><?php the_sub_field('blok_titel'); ?></h3>
+                        <?php
+							echo '<div class="icoon-hoek">'.get_sub_field('blok_icoon').'</div>'; 
+                        ?>
+                        <?php if( get_sub_field('blok_samenvatting') ): ?>
+                        <div class="arrow-hoek">
+                            <i class="fal fa-long-arrow-right"></i>
+                        </div>
+                        <?php else : ?>
+                        <div class="arrow-hoek">
+                            <i class="fal fa-long-arrow-right"></i>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </a>
+            </div>
+				<?php 
+				endwhile;
+			endif;
+			?>
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <a href="https://www.catent.nl/" target="_blank"  onclick="gtag('event', 'Klik', { event_category:  'Homepage', event_action: 'Website Catent'});">
                     <div class="blok-inner ">
                         <h3>Onderdeel van<br class="d-none d-xl-inline"> Stichting Catent</h3>
@@ -105,6 +146,7 @@ endif; ?>
                 </a>
             </div>
 		</div>
+		<?php } ?> 
 	</div>
 </section>
 
